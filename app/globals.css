@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+::after,
+::before {
+  scroll-behavior: smooth;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.load {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    top: calc(50% - 28px);
+    left: calc(50% - 28px);
+    margin: auto;
+    filter: url('#goo');
+}
+
+.custom {
+  z-index: 50 !important;
+}
+
+.animate {
+  animation: stickys 1.5s cubic-bezier(0.28, 0.84, 0.42, 1) 1.5s infinite normal none running;
+  opacity: 0.8;
+}
+
+.-animate {
+  animation: sticky cubic-bezier(0.28, 0.84, 0.42, 1) 1.5s infinite normal none running;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes stickys {
+  0% {
+    transform: translateY(60%);
+  }
+  50% {
+    transform: translateY(-60%);
+  }
+
+  100% {
+    transform: translateY(60%);
+  }
+}
+
+@keyframes sticky {
+  0% {
+    transform: translateY(-60%);
+  }
+  50% {
+    transform: translateY(60%);
+  }
+
+  100% {
+    transform: translateY(-60%);
+  }
+}
